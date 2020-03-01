@@ -101,6 +101,21 @@ struct CarState {
   errorsDEPRECATED @0 :List(CarEvent.EventName);
   events @13 :List(CarEvent);
 
+  # Bosch object tracks
+  obj1 @36 :BoschObject;
+  obj2 @37 :BoschObject;
+  obj3 @38 :BoschObject;
+  obj4 @39 :BoschObject;
+
+  struct BoschObject {
+    #Bosch object liveParameters
+    p1 @0 :Float32; #Top left corner
+    p2 @1 :Float32; #Top right corner
+    p3 @2 :Float32; #Bottom left corner
+    p4 @3 :Float32; #Bottom right corner
+    distance @4 :Float32; #distance to object
+  }
+
   # Bosch lane polynomials
   lPoly @32 :BoschPoly;
   rPoly @33 :BoschPoly;
